@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nuit Magique 🌙</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ciel étoilé animé (fond) -->
+  <canvas id="sky-canvas"></canvas>
+
+  <!-- Cœurs flottants en arrière-plan -->
+  <div id="floating-hearts" aria-hidden="true"></div>
+
+  <!-- Lune -->
+  <div class="moon-wrap" id="moon" aria-label="Lune">
+    <div class="moon-halo"></div>
+    <div class="moon-body">
+      <span class="crater c1"></span>
+      <span class="crater c2"></span>
+      <span class="crater c3"></span>
+      <span class="crater c4"></span>
+    </div>
+    <div class="moon-message" id="moon-message"></div>
+  </div>
+
+  <!-- Bouton musique -->
+  <button id="music-toggle" class="music-btn" aria-label="Activer la musique">
+    <span class="music-icon">♪</span>
+  </button>
+
+  <!-- ================= ÉCRAN 1 : MOT DE PASSE ================= -->
+  <section class="screen" id="screen-password">
+    <div class="glass-card password-card">
+      <div class="card-glow"></div>
+      <p class="eyebrow">✦ une nuit magique t'attend ✦</p>
+      <h1>Chuchote le mot de passe</h1>
+      <p class="subtitle">Seul le cœur qui le connaît peut entrer</p>
+
+      <div class="input-row">
+        <input
+          type="password"
+          id="password-input"
+          placeholder="•••••••"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Mot de passe">
+        <button id="password-toggle-visibility" type="button" class="eye-btn" aria-label="Afficher le mot de passe">👁</button>
+      </div>
+
+      <button id="password-submit" class="btn-primary">
+        <span>Entrer</span>
+        <span class="btn-shine"></span>
+      </button>
+
+      <p id="password-error" class="password-error"></p>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN 2 : ENVELOPPE ================= -->
+  <section class="screen" id="screen-envelope">
+    <div class="envelope-stage">
+      <button class="envelope" id="envelope" aria-label="Ouvrir l'enveloppe">
+        <div class="envelope-shadow"></div>
+        <div class="envelope-back"></div>
+        <div class="letter-peek">
+          <div class="letter-peek-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="envelope-front">
+          <div class="envelope-seal">🖤</div>
+        </div>
+        <div class="envelope-flap"></div>
+      </button>
+      <p class="hint" id="envelope-hint">touche l'enveloppe ✨</p>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN 3 : LES CHATS ================= -->
+  <section class="screen" id="screen-cats">
+    <div class="cats-stage">
+      <div class="ground-glow"></div>
+
+      <button class="cat cat-black" id="cat-black" aria-label="Chat noir">
+        <span class="cat-emoji">🐈‍⬛</span>
+        <span class="speech-bubble" id="bubble-black"></span>
+      </button>
+
+      <button class="cat cat-white" id="cat-white" aria-label="Chat blanc">
+        <span class="cat-emoji">🐈</span>
+        <span class="speech-bubble" id="bubble-white"></span>
+      </button>
+
+      <div class="hug-fx" id="hug-fx"></div>
+    </div>
+    <p class="hint fade-hint" id="cats-hint">deux âmes qui se retrouvent...</p>
+  </section>
+
+  <!-- ================= ÉCRAN 4 : LA LETTRE ================= -->
+  <section class="screen" id="screen-letter">
+    <div class="letter-stage">
+      <div class="letter-paper">
+        <div class="paper-fold"></div>
+        <div class="letter-text" id="letter-text"></div>
+        <span class="typewriter-cursor" id="tw-cursor">|</span>
+      </div>
+      <button class="btn-primary btn-replay hidden" id="letter-replay">
+        <span>Relire 🖤</span>
+        <span class="btn-shine"></span>
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
